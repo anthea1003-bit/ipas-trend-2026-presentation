@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "name": "xiaoye",
+  "label": "小葉",
+  "canvas": {
+    "width": 500,
+    "height": 800
+  },
+  "frames": {
+    "wave": "frames/frames.json",
+    "idle": "frames/frames.json",
+    "walk": "frames/frames.json"
+  }
+}
