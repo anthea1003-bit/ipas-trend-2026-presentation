@@ -10,6 +10,7 @@
 <style>
 :root{--footer-height:80px;--type-body:17px;--type-small:17px;--type-micro:14px;--type-reading:20px;--paper:#FAF6EE;--ink:#403c33;--muted:#71695c;--line:#d9d1c1;--soft:#eee7dc;--signal:#e4ebd9;--green:#506747;--tea:#94795c;--serif:"LXGW WenKai TC","LXGW WenKai","霞鶩文楷","Iowan Old Style","Songti TC",serif;--sans:"LXGW WenKai TC","LXGW WenKai","霞鶩文楷","PingFang TC",sans-serif;--ease:cubic-bezier(.22,.72,.22,1)}
 *{box-sizing:border-box}html,body{width:100%;height:100%;margin:0;overflow:hidden}body{background:var(--paper);color:var(--ink);font:var(--type-body)/1.5 var(--sans)}p{margin:0}button{font:inherit;color:inherit;cursor:pointer;border:1px solid var(--line);background:transparent;border-radius:8px;padding:8px 12px;min-height:44px;touch-action:manipulation}button:hover{background:var(--soft)}button:focus-visible{outline:3px solid var(--green);outline-offset:3px}button:disabled{cursor:default;opacity:.55}button:disabled:hover{background:transparent}[hidden]{display:none!important}strong{font-weight:700}
+mark{background:#f3e48a;color:var(--ink);padding:0 3px;border-radius:3px}
 .deck{height:100%}.slide{position:absolute;inset:0 0 var(--footer-height);padding:24px 4vw 24px;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;visibility:hidden;opacity:0;transform:translateY(12px);transition:opacity .2s var(--ease),transform .2s var(--ease)}.slide.is-active{visibility:visible;opacity:1;transform:none}.shell{width:min(1240px,100%);min-height:100%;margin:auto;display:flex;flex-direction:column;gap:18px;min-width:0}.section-head{display:flex;flex-direction:column;align-items:flex-start;gap:10px;flex-shrink:0}.section-head h2{font:500 36px/1.2 var(--serif);letter-spacing:-.035em;margin:0;outline:none}.heading{font-size:21px;line-height:1.4;overflow-wrap:anywhere}.tags{display:flex;flex-wrap:wrap;gap:8px}.tags span{font-size:17px;color:var(--tea);background:var(--soft);padding:3px 10px;border-radius:5px}.content{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:16px}.bridge{font-size:17px;line-height:1.4;color:var(--green);font-weight:700}.source-note{font-size:14px;color:var(--muted);line-height:1.5;overflow-wrap:anywhere}
 .footer{position:fixed;inset:auto 0 0;background:var(--paper);z-index:10;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:10px 4vw 14px;border-top:1px solid var(--line)}.footer-notes{flex:1;min-width:0}.controls{display:flex;align-items:center;gap:10px;margin-left:auto;flex-shrink:0}.controls button{width:48px;height:48px;padding:8px;display:grid;place-items:center}.controls svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5}.controls .mode-toggle{width:auto;padding:0 14px;font:inherit;white-space:nowrap}.mode-toggle[aria-pressed="true"]{background:var(--signal);border-color:var(--green)}.page-number{min-width:58px;text-align:center;white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--muted)}.progress{z-index:11;position:fixed;bottom:0;left:0;width:100%;height:4px;background:var(--line)}.progress:after{content:"";display:block;width:var(--progress);height:100%;background:var(--green);transition:width .2s}.edge{position:fixed;top:0;bottom:var(--footer-height);width:2.5vw;padding:0;min-height:0;border:0;border-radius:0;z-index:4;background:transparent}.edge:hover{background:rgba(148,121,92,.08)}#prev{left:0}#next{right:0}
 .hero{flex:1;display:grid;grid-template-columns:minmax(0,1fr) 230px;align-items:center;gap:32px}.hero h1{font:500 clamp(38px,4.6vw,62px)/1.3 var(--serif);letter-spacing:-.04em;margin:16px 0 20px;outline:none}.kicker{font-size:17px;color:var(--tea)}.subtitle{font-size:23px;line-height:1.6;color:var(--muted)}.cover-rule{width:100px;height:3px;background:var(--green);margin:24px 0}.topics{display:grid;grid-template-columns:1fr 1fr;gap:10px 28px;margin:0 0 24px;padding-left:1.5em;font-size:21px}.topics li::marker,.takeaways li::marker{color:var(--green)}.tea-slot{display:flex;align-items:center;justify-content:center;padding:20px;min-width:0;align-self:center;pointer-events:none}.hero .tea-slot{align-self:end;margin-bottom:40px}
@@ -39,7 +40,7 @@
 <p class="heading">強化學習（Reinforcement Learning）｜獎勵設計（Reward Design）</p>
 <div class="tags"><span>第四章 ML／DL｜指引 4-9～4-10</span><span>服務業｜電商資料查詢</span></div></header>
 <div class="content"><div class="quiz" data-answer="C"><div class="quiz-prompt">
-<p class="question">某電商用強化學習訓練模型自動撰寫資料查詢程式，獎勵設為「通過 10 個公開測試案例就得 +1」。上線後發現，模型寫的程式只是把這 10 個案例的答案直接寫死，一換成新資料就出錯。此現象的核心問題與改善方向為何？</p><div class="options">
+<p class="question">某電商用強化學習訓練模型自動撰寫資料查詢程式，<mark>獎勵設為「通過 10 個公開測試案例就得 +1」</mark>。上線後發現，模型寫的程式只是<mark>把這 10 個案例的答案直接寫死</mark>，<mark>一換成新資料就出錯</mark>。此現象的核心問題與改善方向為何？</p><div class="options">
 <button class="option" type="button" aria-pressed="false" aria-controls="feedback-1"><span class="letter">(A)</span><span>學習率過高使策略震盪，應降低學習率並延長訓練的回合數</span></button>
 <button class="option" type="button" aria-pressed="false" aria-controls="feedback-1"><span class="letter">(B)</span><span>狀態空間太大使價值函數無法收斂，應改用監督式學習訓練</span></button>
 <button class="option" type="button" aria-pressed="false" aria-controls="feedback-1"><span class="letter">(C)</span><span>獎勵只看公開測試，模型學會鑽漏洞；應讓獎勵更貼近真正目標</span></button>
@@ -58,7 +59,7 @@
 <p class="heading">知識蒸餾（Knowledge Distillation）＋量化（Quantization）｜地端小型語言模型（Small Language Model）</p>
 <div class="tags"><span>第五章 建模調校｜指引 5-49～5-51</span><span>醫療｜院內病歷助理</span></div></header>
 <div class="content"><div class="quiz" data-answer="A"><div class="quiz-prompt">
-<p class="question">某醫院想導入病歷摘要助理。限制條件：病歷不得離開院內網路；院內只有少量 GPU，但醫師要求回應要快；指引也提醒生成式模型可能記住訓練資料中的個資。下列規劃何者最合適？</p><div class="options">
+<p class="question">某醫院想導入病歷摘要助理。限制條件：<mark>病歷不得離開院內網路</mark>；<mark>院內只有少量 GPU，但醫師要求回應要快</mark>；指引也提醒生成式模型<mark>可能記住訓練資料中的個資</mark>。下列規劃何者最合適？</p><div class="options">
 <button class="option" type="button" aria-pressed="false" aria-controls="feedback-2"><span class="letter">(A)</span><span>在院內部署小型模型，以蒸餾取得大模型能力，再以量化加速推論</span></button>
 <button class="option" type="button" aria-pressed="false" aria-controls="feedback-2"><span class="letter">(B)</span><span>把病歷上傳到雲端大型模型 API，再用混合精度訓練加快回應速度</span></button>
 <button class="option" type="button" aria-pressed="false" aria-controls="feedback-2"><span class="letter">(C)</span><span>在院內部署大型模型，以非結構化剪枝讓推論速度在一般硬體上倍增</span></button>
@@ -77,7 +78,7 @@
 <p class="heading">合成資料（Synthetic Data）｜測試集要用真實資料</p>
 <div class="tags"><span>第五章 建模調校｜指引 5-10、4-89</span><span>製造業｜機器手臂瑕疵檢測</span></div></header>
 <div class="content"><div class="quiz" data-answer="D"><div class="quiz-prompt">
-<p class="question">某工廠真實的刮痕影像太少，改用生成式模型產生大量合成瑕疵影像來訓練檢測模型。團隊要規劃資料怎麼分配，才能讓評估分數反映上線後在真實產線的表現。下列做法何者最合適？</p><div class="options">
+<p class="question">某工廠<mark>真實的刮痕影像太少</mark>，改用生成式模型<mark>產生大量合成瑕疵影像</mark>來訓練檢測模型。團隊要規劃資料怎麼分配，才能讓評估分數<mark>反映上線後在真實產線的表現</mark>。下列做法何者最合適？</p><div class="options">
 <button class="option" type="button" aria-pressed="false" aria-controls="feedback-3"><span class="letter">(A)</span><span>合成影像與真實影像混合後再隨機切分，讓測試集也有合成影像</span></button>
 <button class="option" type="button" aria-pressed="false" aria-controls="feedback-3"><span class="letter">(B)</span><span>合成影像夠逼真就能取代真實影像，現場資料可以完全不再蒐集</span></button>
 <button class="option" type="button" aria-pressed="false" aria-controls="feedback-3"><span class="letter">(C)</span><span>合成影像讓類別變平衡，因此評估時改用 Accuracy 就能反映品質</span></button>
@@ -96,7 +97,7 @@
 <p class="heading">LoRA（Low-Rank Adaptation）微調（Fine-tuning）</p>
 <div class="tags"><span>指引外</span><span>金融業｜地端客服模型</span></div></header>
 <div class="content"><div class="quiz" data-answer="B"><div class="quiz-prompt">
-<p class="question">某銀行要讓地端的大型語言模型學會內部客服話術，但 GPU 記憶體只夠推論、不夠做完整微調。工程師改用 LoRA（Low-Rank Adaptation）。關於 LoRA 的做法，下列敘述何者正確？</p><div class="options">
+<p class="question">某銀行要讓地端的大型語言模型學會內部客服話術，但 <mark>GPU 記憶體只夠推論、不夠做完整微調</mark>。工程師改用 <mark>LoRA（Low-Rank Adaptation）</mark>。關於 LoRA 的做法，下列敘述何者正確？</p><div class="options">
 <button class="option" type="button" aria-pressed="false" aria-controls="feedback-4"><span class="letter">(A)</span><span>把模型權重從 32 位元轉成 8 位元整數，讓推論時的模型體積變小</span></button>
 <button class="option" type="button" aria-pressed="false" aria-controls="feedback-4"><span class="letter">(B)</span><span>凍結原本的權重，只訓練額外插入的低秩小矩陣，可訓練參數大幅減少</span></button>
 <button class="option" type="button" aria-pressed="false" aria-controls="feedback-4"><span class="letter">(C)</span><span>用大模型的輸出當作學習目標，另外訓練一個參數較少的小模型</span></button>
@@ -115,7 +116,7 @@
 <p class="heading">RAG（Retrieval-Augmented Generation）vs 微調（Fine-tuning）</p>
 <div class="tags"><span>指引外</span><span>醫療｜用藥知識庫</span></div></header>
 <div class="content"><div class="quiz" data-answer="C"><div class="quiz-prompt">
-<p class="question">某醫院要讓生成式 AI 回答用藥問題。限制條件：用藥知識庫每週更新；醫師要求每個回答都附上原始出處以便查核；院方預算不允許頻繁訓練模型。下列做法何者最合適？</p><div class="options">
+<p class="question">某醫院要讓生成式 AI 回答用藥問題。限制條件：<mark>用藥知識庫每週更新</mark>；醫師要求<mark>每個回答都附上原始出處</mark>以便查核；院方<mark>預算不允許頻繁訓練模型</mark>。下列做法何者最合適？</p><div class="options">
 <button class="option" type="button" aria-pressed="false" aria-controls="feedback-5"><span class="letter">(A)</span><span>每週用新資料完整微調模型一次，讓新的用藥知識直接寫入模型權重</span></button>
 <button class="option" type="button" aria-pressed="false" aria-controls="feedback-5"><span class="letter">(B)</span><span>每週用 LoRA 微調一次，只訓練少量參數，以節省每次訓練的記憶體</span></button>
 <button class="option" type="button" aria-pressed="false" aria-controls="feedback-5"><span class="letter">(C)</span><span>採用 RAG：每週更新知識庫文件即可，回答時附上檢索到的原始出處</span></button>
@@ -134,7 +135,7 @@
 <p class="heading">《人工智慧基本法》｜高風險認定</p>
 <div class="tags"><span>指引外（第六章治理的延伸）</span><span>金融業｜AI 信用評分</span></div></header>
 <div class="content"><div class="quiz" data-answer="A"><div class="quiz-prompt">
-<p class="question">某銀行準備上線 AI 信用評分模型，法遵部門參考數位發展部《人工智慧風險分類框架》的評估邏輯，判斷這個應用是否屬於高風險。下列做法何者最符合該框架的精神？</p><div class="options">
+<p class="question">某銀行準備上線 <mark>AI 信用評分模型</mark>，法遵部門參考數位發展部<mark>《人工智慧風險分類框架》</mark>的評估邏輯，<mark>判斷這個應用是否屬於高風險</mark>。下列做法何者最符合該框架的精神？</p><div class="options">
 <button class="option" type="button" aria-pressed="false" aria-controls="feedback-6"><span class="letter">(A)</span><span>以應用本身的固有風險評估；可能嚴重影響人民財產等權益就認定高風險</span></button>
 <button class="option" type="button" aria-pressed="false" aria-controls="feedback-6"><span class="letter">(B)</span><span>已導入去偏與人工覆核措施，就可以直接把風險等級降為低風險的應用</span></button>
 <button class="option" type="button" aria-pressed="false" aria-controls="feedback-6"><span class="letter">(C)</span><span>必須等實際發生損害或出現客訴之後，才需要啟動風險評估的流程</span></button>
